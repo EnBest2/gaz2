@@ -1,0 +1,78 @@
+/* Modern, animált gradient háttér */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eac9);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Gradient animáció */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Tartalom doboz */
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  text-align: center;
+  color: #333;
+}
+
+/* Modern gombok – gradientes, animált és lekerekített */
+button {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  color: white;
+  transition: 0.3s ease-in-out;
+  margin-top: 5px;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #86a8e7, #91eac9);
+}
+
+/* Reszponzív elrendezés */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  button {
+    width: 100%;
+  }
+  #chart {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Egyszerű input és select stílusok */
+input, select {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
