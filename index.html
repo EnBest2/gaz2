@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pénzügyi Nyilvántartó</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Pénzügyi Nyilvántartó</h1>
+      <button id="toggleMode">🌙 Sötét mód</button>
+    </header>
+
+    <!-- Új tranzakció felvitele -->
+    <section id="inputSection">
+      <h2>Új tranzakció hozzáadása</h2>
+      <input type="text" id="description" placeholder="Megnevezés">
+      <input type="number" id="amount" placeholder="Összeg">
+      <!-- Dátum választó -->
+      <input type="date" id="transactionDate">
+      <select id="category"></select>
+      <button onclick="addTransaction()">Hozzáadás</button>
+    </section>
+
+    <!-- Egyéni kategória felvitele – itt két input: név és ikon -->
+    <section id="customCategorySection">
+      <h2>Egyéni kategória hozzáadása</h2>
+      <input type="text" id="newCategory" placeholder="Új kategória neve">
+      <input type="text" id="newCategoryIcon" placeholder="Ikon (pl. 😊)">
+      <button onclick="addCategory()">➕ Kategória hozzáadása</button>
+    </section>
+
+    <!-- Megtakarításból kivenés -->
+    <section id="withdrawSection">
+      <h2>Megtakarításból kivétel</h2>
+      <input type="number" id="withdrawAmount" placeholder="Összeg">
+      <button onclick="withdrawSavings()">Kivonás</button>
+    </section>
+
+    <!-- Tranzakciók listája + egyenleg és megtakarítás megjelenítése -->
+    <section id="transactionSection">
+      <h2>Tranzakciók</h2>
+      <ul id="transactions"></ul>
+      <p>Egyenleg (kivéve megtakarítás): <span id="balance">0</span> Ft</p>
+      <p>Megtakarítás: <span id="savings">0</span> Ft</p>
+    </section>
+
+    <!-- Lapozható pénzügyi napló -->
+    <section id="history">
+      <h2>Pénzügyi Napló 📖</h2>
+      <button onclick="previousMonth()">⬅ Előző hónap</button>
+      <button onclick="nextMonth()">➡ Következő hónap</button>
+      <p id="currentMonth"></p>
+    </section>
+
+    <!-- Kördiagram a költési szokásokról -->
+    <section id="chartSection">
+      <h2>Grafikon a költési szokásokról</h2>
+      <canvas id="chart"></canvas>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
